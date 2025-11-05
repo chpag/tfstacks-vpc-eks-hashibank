@@ -79,6 +79,29 @@ deployment "development" {
   }
 }
 
+deployment "development2" {
+  # Assign this deployment to the 'dev_group'.
+  deployment_group = deployment_group.dev_group
+#  destroy=true
+  inputs = {
+    aws_identity_token        = identity_token.aws.jwt
+    role_arn                  = "arn:aws:iam::103354112924:role/stacks-cpaget-org1-Default-Project"
+    regions                   = ["eu-west-3"]
+    vpc_name                  = "aeyuthira-dev2"
+    vpc_cidr                  = "10.30.0.0/16"
+    kubernetes_version        = "1.30"
+    cluster_name              = "hideyaki-dev2-final"
+    tfc_kubernetes_audience   = "k8s.workload.identity"
+    tfc_hostname              = "https://app.terraform.io"
+    tfc_organization_name     = "cpaget-org1"
+    eks_clusteradmin_arn      = "arn:aws:iam::103354112924:role/aws_christophe.paget_test-developer"
+    eks_clusteradmin_username = "aws_christophe.paget_test-developer"
+    k8s_identity_token        = identity_token.k8s.jwt
+    namespace                 = "hashibank"
+  }
+}
+
+
 deployment "prod" {
   # Assign this deployment to the 'prod_group'.
   deployment_group = deployment_group.prod_group
