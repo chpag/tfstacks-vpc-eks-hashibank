@@ -25,7 +25,19 @@ deployment_auto_approve "safe_dev_plans" {
     reason        = "Plan has ${context.plan.changes.remove} resources to be removed. Manual approval required."
   }
 }
+deployment_auto_approve "no_changes" {
+  check {
+    condition = context.plan.changes.total == 0
+    reason    = "Plan contains too many changes for automatic approval."
+  }
+}
 
+deployment_auto_approve "successful_plans" {
+  check {
+    condition = context.success == true
+    reason    = "Operation failed and requires manual intervention."
+  }
+}
 # ----------------------------------------------------
 # Step 3: Define Deployment Groups and Assign Rules
 # ----------------------------------------------------
