@@ -32,7 +32,8 @@ deployment_auto_approve "safe_dev_plans" {
 deployment_group "dev_group" {
   # The dev group uses the auto-approval rule.
   auto_approve_checks = [
-    deployment_auto_approve.safe_dev_plans
+    deployment_auto_approve.approve_staging,
+    deployment_auto_approve.successful_plans
   ]
 }
 
