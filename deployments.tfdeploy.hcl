@@ -58,7 +58,7 @@ deployment "development" {
     cluster_name              = "hideyaki-dev1-final"
     tfc_kubernetes_audience   = "k8s.workload.identity"
     tfc_hostname              = "https://app.terraform.io"
-    tfc_organization_name     = "vearadyn"
+    tfc_organization_name     = "cpaget-org1"
     eks_clusteradmin_arn      = "arn:aws:iam::103354112924:role/aws_christophe.paget_test-developer"
     eks_clusteradmin_username = "aws_christophe.paget_test-developer"
     k8s_identity_token        = identity_token.k8s.jwt
@@ -79,7 +79,7 @@ deployment "prod" {
     cluster_name              = "hideyaki-eksprod01-final"
     tfc_kubernetes_audience   = "k8s.workload.identity"
     tfc_hostname              = "https://app.terraform.io"
-    tfc_organization_name     = "vearadyn"
+    tfc_organization_name     = "cpaget-org1"
     eks_clusteradmin_arn      = "arn:aws:iam::103354112924:role/aws_christophe.paget_test-developer"
     eks_clusteradmin_username = "aws_christophe.paget_test-developer"
     k8s_identity_token        = identity_token.k8s.jwt
