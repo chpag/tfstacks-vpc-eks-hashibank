@@ -50,8 +50,8 @@ deployment "development" {
   destroy=true
   inputs = {
     aws_identity_token        = identity_token.aws.jwt
-    role_arn                  = "arn:aws:iam::103354112924:role/stacks-cpag"
-    regions                   = ["us-east-1"]
+    role_arn                  = "arn:aws:iam::103354112924:role/stacks-cpaget-org1-Default-Project"
+    regions                   = ["eu-west-3"]
     vpc_name                  = "aeyuthira-dev1"
     vpc_cidr                  = "10.0.0.0/16"
     kubernetes_version        = "1.30"
@@ -71,8 +71,8 @@ deployment "prod" {
   deployment_group = deployment_group.prod_group
   inputs = {
     aws_identity_token        = identity_token.aws.jwt
-    role_arn                  = "arn:aws:iam::103354112924:role/stacks-cpag"
-    regions                   = ["us-east-1"]
+    role_arn                  = "arn:aws:iam::103354112924:role/stacks-cpaget-org1-Default-Project"
+    regions                   = ["eu-west-3"]
     vpc_name                  = "aeyuthirai-prod"
     vpc_cidr                  = "10.20.0.0/16"
     kubernetes_version        = "1.30"
