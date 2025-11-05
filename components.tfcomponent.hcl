@@ -1,4 +1,4 @@
--west# This file defines the "what" - the building blocks of our stack.
+# This file defines the "what" - the building blocks of our stack.
 
 #AWS VPC
 component "vpc" {
