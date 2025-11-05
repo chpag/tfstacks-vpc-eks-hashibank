@@ -50,7 +50,7 @@ deployment "development" {
   destroy=true
   inputs = {
     aws_identity_token        = identity_token.aws.jwt
-    role_arn                  = "arn:aws:iam::177099687113:role/tfstacks-role"
+    role_arn                  = "arn:aws:iam::103354112924:role/stacks-cpag"
     regions                   = ["us-east-1"]
     vpc_name                  = "aeyuthira-dev1"
     vpc_cidr                  = "10.0.0.0/16"
@@ -59,8 +59,8 @@ deployment "development" {
     tfc_kubernetes_audience   = "k8s.workload.identity"
     tfc_hostname              = "https://app.terraform.io"
     tfc_organization_name     = "vearadyn"
-    eks_clusteradmin_arn      = "arn:aws:iam::177099687113:role/aws_jacob.plicque_test-developer"
-    eks_clusteradmin_username = "aws_jacob.plicque_test-developer"
+    eks_clusteradmin_arn      = "arn:aws:iam::103354112924:role/aws_christophe.paget_test-developer"
+    eks_clusteradmin_username = "aws_christophe.paget_test-developer"
     k8s_identity_token        = identity_token.k8s.jwt
     namespace                 = "hashibank"
   }
@@ -80,8 +80,8 @@ deployment "prod" {
     tfc_kubernetes_audience   = "k8s.workload.identity"
     tfc_hostname              = "https://app.terraform.io"
     tfc_organization_name     = "vearadyn"
-    eks_clusteradmin_arn      = "arn:aws:iam::855831148133:role/aws_jacob.plicque_test-developer"
-    eks_clusteradmin_username = "aws_jacob.plicque_test-developer"
+    eks_clusteradmin_arn      = "arn:aws:iam::103354112924:role/aws_christophe.paget_test-developer"
+    eks_clusteradmin_username = "aws_christophe.paget_test-developer"
     k8s_identity_token        = identity_token.k8s.jwt
     namespace                 = "hashibank"
   }
