@@ -1,4 +1,4 @@
-# This file defines the "what" - the building blocks of our stack.
+-west# This file defines the "what" - the building blocks of our stack.
 
 #AWS VPC
 component "vpc" {
@@ -124,6 +124,6 @@ component "deploy-hashibank" {
 output "published_vpc_id" {
   description = "The ID of the VPC from the development deployment."
   type        = string
-  value       = component.vpc["us-east-1"].vpc_id
+  value       = component.vpc["eu-west-3"].vpc_id
 }
 
